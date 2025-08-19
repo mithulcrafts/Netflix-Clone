@@ -6,11 +6,16 @@
         <Link rel="stylesheet" href="LandingPage.css"/>
     </head>
     <body>
-        <img src="./src/Title.png" class="title" height="50px" width="200px" />
-        <div class="banner">
-            
-        </div>
-        
+        <header>
+            <img src="./src/Title.png" class="title" alt="Netflix Title Logo" height="60px" width="250px" />
+            <button style="float:right; margin-right: 3vw; margin-top: 2vw;">
+                <img src="./src/user.png" height="50px" width="50px" >
+            </button>
+        </header>
+        <div class="banner"></div>
+        <h2 style="margin-left:70px">Top picks for you</h2>
+        <div class="row" id="top_picks"></div>
+        <script src="LandingPage.js"></script>
         <div class="navbar">
             <button title="Search">
                 <img src="./src/search.png"/>
