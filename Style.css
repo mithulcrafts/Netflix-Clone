@@ -71,6 +71,7 @@ button:hover{
     height:20vw;
     width:13vw;
     background-size: cover;
+    background-position: center;
     border-radius: 5px;
     flex: 0 0 auto;
 }
@@ -88,6 +89,7 @@ button:hover{
     height: 80px;  
     background: rgba(0,0,0,0.7);
     border-radius: 7px;
+    z-index: 5;
 }
 .left{
     left:3vw;

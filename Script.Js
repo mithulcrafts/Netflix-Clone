@@ -26,22 +26,34 @@ async function loadFromJson(jsonFile,rowid,categoryKey)
     }
 }
 
-async function loadFromApi(endpoint,rowid,language,sort_by)
+async function loadFromApi(endpoint,rowid,language=null,sort_by=null,genre=null,numberofmovies=20)
 {
     const API_KEY="5e138867bc66fb7e6370cb732ab4f829";
-    const url = `https://api.themoviedb.org/3${endpoint}?api_key=${API_KEY}&with_original_language=${language}&sort_by=${sort_by}&primary_release_date.lte=${today}&with_watch_providers=8&watch_region=IN`;
+    let url = `https://api.themoviedb.org/3${endpoint}?api_key=${API_KEY}`;
+    if(language)
+    {
+        url+=`&with_original_language=${language}`;
+    }
+    if(sort_by)
+    {
+        url+=`&sort_by=${sort_by}`;
+    }
+    url+=`&primary_release_date.lte=${today}&with_watch_providers=8&watch_region=IN`;
+    if(genre)
+    {
+        url+=`&with_genres=${genre}`;
+    }
     try{
+        const number=numberofmovies;
         const res=await fetch(url);
         const data=await res.json();
-        const movies=data.results.slice(0,6);
+        const movies=data.results.slice(0,number);
         displaymovies(movies,rowid,true);
     }
     catch(err){
         console.error("Error loading API data:",err);
     }
 }
-loadFromJson("MyMovies.json","top_picks","Netflix's choice");
-loadFromApi("/discover/movie","new_telugu_movies","te","release_date.desc");
 
 document.querySelectorAll(".moviescontainer").forEach(container=>{
     const row=container.querySelector(".row");
@@ -54,3 +66,12 @@ document.querySelectorAll(".moviescontainer").forEach(container=>{
         row.scrollBy({left:300,behavior:"smooth"});
     });
 })
+
+loadFromJson("MyMovies.json","top_picks","Netflix's choice");
+loadFromApi("/trending/movie/week","trending",null,null,null,10);
+loadFromApi("/discover/movie","new_telugu_movies","te","release_date.desc",null,15);
+loadFromApi("/discover/movie","popular_telugu_movies","te","popularity.desc");
+loadFromApi("/discover/tv","popular_shows",null,"popularity.desc",null);
+loadFromApi("/discover/movie","telugu_action","te","rating.desc",28,15);
+loadFromApi("/discover/movie","horror",null,"popularity.desc",27,15);
+loadFromApi("/discover/movie","telugu_comedy","te","popularity.desc",35,8);
