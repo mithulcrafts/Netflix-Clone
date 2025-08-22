@@ -42,3 +42,15 @@ async function loadFromApi(endpoint,rowid,language,sort_by)
 }
 loadFromJson("MyMovies.json","top_picks","Netflix's choice");
 loadFromApi("/discover/movie","new_telugu_movies","te","release_date.desc");
+
+document.querySelectorAll(".moviescontainer").forEach(container=>{
+    const row=container.querySelector(".row");
+    const leftbutton=row.parentElement.querySelector(".scrollbutton.left");
+    const rightbutton=row.parentElement.querySelector(".scrollbutton.right");
+    leftbutton.addEventListener("click",()=>{
+        row.scrollBy({left:-300,behavior:"smooth"});
+    });
+    rightbutton.addEventListener("click",()=>{
+        row.scrollBy({left:300,behavior:"smooth"});
+    });
+})
