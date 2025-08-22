@@ -50,6 +50,9 @@ button:hover{
 .moviescontainer{
     position:relative;
 }
+.moviescontainer h2{
+    margin-left: 70px;
+}
 .row{
     margin:20px;
     margin-left: 60px;
@@ -57,7 +60,7 @@ button:hover{
     gap:25px;
     overflow-x:auto;
     overflow-y: visible;
-    padding: 2vw; 
+    padding: 1.5vw; 
 }
 
 .row::-webkit-scrollbar {
