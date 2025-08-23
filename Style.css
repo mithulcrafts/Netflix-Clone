@@ -83,6 +83,7 @@ button:hover{
 }
 
 .scrollbutton{
+    visibility:hidden;
     position:absolute;
     top:50%;
     width: 40px;   
@@ -90,6 +91,9 @@ button:hover{
     background: rgba(0,0,0,0.7);
     border-radius: 7px;
     z-index: 5;
+}
+.moviescontainer:hover .scrollbutton{
+    visibility: visible;
 }
 .left{
     left:3vw;
