@@ -12,6 +12,7 @@ function displaymovies(movies,rowid,isapi=false)
         card.title=movie.title;
         row.appendChild(card);
     })
+    console.log(`Successfully displayed ${rowid}`);
 }
 async function loadFromJson(jsonFile,rowid,categoryKey)
 {
@@ -48,6 +49,7 @@ async function loadFromApi(endpoint,rowid,language=null,sort_by=null,genre=null,
         const res=await fetch(url);
         const data=await res.json();
         const movies=data.results.slice(0,number);
+        console.log(`Successfully fetched ${rowid} data`);
         displaymovies(movies,rowid,true);
     }
     catch(err){
