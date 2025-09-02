@@ -7,7 +7,8 @@ function displaymovies(movies,rowid,isapi=false)
     movies.forEach(movie=>{
         const card=document.createElement("div");
         card.classList.add("card");
-        const posterPath = isapi? IMG_BASE_URL + movie.poster_path : `./src/posters/${movie.poster}`;
+        const posterPath = isapi? (movie.poster_path?IMG_BASE_URL + movie.poster_path:null) : `./src/posters/${movie.poster}`;
+        if(!posterPath) return;
         card.style.backgroundImage=`url(${posterPath})`;
         card.title=movie.title;
         row.appendChild(card);
@@ -77,3 +78,7 @@ loadFromApi("/discover/tv","popular_shows",null,"popularity.desc",null);
 loadFromApi("/discover/movie","telugu_action","te","rating.desc",28,15);
 loadFromApi("/discover/movie","horror",null,"popularity.desc",27,15);
 loadFromApi("/discover/movie","telugu_comedy","te","popularity.desc",35,8);
+loadFromApi("/discover/movie","sci_fi",null,null,878,18);
+loadFromApi("/discover/movie","telugu_thriller","te","rating.desc",53,20);
+loadFromApi("/discover/movie","Animation",null,"popularity.desc",16,10);
+loadFromApi("/discover/movie","telugu_old","te","release_date.asc",null,20);
