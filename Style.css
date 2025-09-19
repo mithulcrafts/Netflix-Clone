@@ -9,7 +9,7 @@ body{
 }
 .navbar{
     position: fixed;
-    top: 13vw;
+    top: 25vh;
     display: flex;
     flex-direction: column;
     gap:2vw;
