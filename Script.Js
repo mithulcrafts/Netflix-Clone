@@ -11,9 +11,12 @@ function displaymovies(movies,rowid,isapi=false)
         if(!posterPath) return;
         card.style.backgroundImage=`url(${posterPath})`;
         card.title=movie.title;
+        console.log(`Successfully displayed ${rowid}`);
+        card.addEventListener('click',()=>{
+            window.location.href='./MovieDisplay/MovieDisplay.html';
+        })
         row.appendChild(card);
     })
-    console.log(`Successfully displayed ${rowid}`);
 }
 async function loadFromJson(jsonFile,rowid,categoryKey)
 {
