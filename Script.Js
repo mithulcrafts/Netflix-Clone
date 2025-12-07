@@ -34,20 +34,12 @@ async function loadFromJson(jsonFile,rowid,categoryKey)
 async function loadFromApi(endpoint,rowid,language=null,sort_by=null,genre=null,numberofmovies=20)
 {
     const API_KEY="5e138867bc66fb7e6370cb732ab4f829";
-    let url = `https://api.themoviedb.org/3${endpoint}?api_key=${API_KEY}`;
-    if(language)
-    {
-        url+=`&with_original_language=${language}`;
-    }
-    if(sort_by)
-    {
-        url+=`&sort_by=${sort_by}`;
-    }
-    url+=`&primary_release_date.lte=${today}&with_watch_providers=8&watch_region=IN`;
-    if(genre)
-    {
-        url+=`&with_genres=${genre}`;
-    }
+    let tmdbURL = `https://api.themoviedb.org/3${endpoint}?api_key=${API_KEY}`;
+    if(language) tmdbURL += `&with_original_language=${language}`;
+    if(sort_by)  tmdbURL += `&sort_by=${sort_by}`;
+    tmdbURL += `&primary_release_date.lte=${today}&with_watch_providers=8&watch_region=IN`;
+    if(genre)    tmdbURL += `&with_genres=${genre}`;
+    let url = `https://api.allorigins.win/raw?url=${encodeURIComponent(tmdbURL)}`;
     try{
         const number=numberofmovies;
         const res=await fetch(url);
