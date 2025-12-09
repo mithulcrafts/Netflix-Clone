@@ -13,7 +13,7 @@ function displaymovies(movies,rowid,isapi=false)
         card.title=movie.title;
         console.log(`Successfully displayed ${rowid}`);
         card.addEventListener('click',()=>{
-            window.location.href='./MovieDisplay/MovieDisplay.html';
+            window.location.href=`./MovieDisplay/MovieDisplay.html?movie=${movie.id}`;
         })
         row.appendChild(card);
     })
@@ -39,7 +39,7 @@ async function loadFromApi(endpoint,rowid,language=null,sort_by=null,genre=null,
     if(sort_by)  tmdbURL += `&sort_by=${sort_by}`;
     tmdbURL += `&primary_release_date.lte=${today}&with_watch_providers=8&watch_region=IN`;
     if(genre)    tmdbURL += `&with_genres=${genre}`;
-    let url = `https://api.allorigins.win/raw?url=${encodeURIComponent(tmdbURL)}`;
+    let url = `https://corsproxy.io/raw?url=${encodeURIComponent(tmdbURL)}`;
     try{
         const number=numberofmovies;
         const res=await fetch(url);
