@@ -64,7 +64,14 @@ document.querySelectorAll(".moviescontainer").forEach(container=>{
         row.scrollBy({left:300,behavior:"smooth"});
     });
 })
+function banner(movie_id)
+{
+    const banner=document.querySelector(".banner");
+    banner.addEventListener('click',()=>{
+        window.location.href=`./MovieDisplay/MovieDisplay.html?movie=${movie_id}`;
+    });
 
+}
 loadFromJson("MyMovies.json","top_picks","Netflix's choice");
 loadFromApi("/trending/movie/week","trending",null,null,null,10);
 loadFromApi("/discover/movie","new_telugu_movies","te","release_date.desc",null,15);
@@ -77,3 +84,4 @@ loadFromApi("/discover/movie","sci_fi",null,"popularity.desc",878,18);
 loadFromApi("/discover/movie","telugu_thriller","te","rating.desc",53,20);
 loadFromApi("/discover/movie","animation",null,"popularity.desc",16,10);
 loadFromApi("/discover/movie","telugu_old","te","release_date.asc",null,20);
+banner("770906");

@@ -1,11 +1,11 @@
 {
     "Netflix's choice":[
-        {"title":"HIT 3","poster":"hit3_poster.jpeg"},
-        {"title":"Pushpa 2","poster":"Pushpa2poster.png"},
-        {"title":"Salaar","poster":"salaarposter.jpg"},
-        {"title":"Kalki","poster":"kalkiposter.jpg"},
-        {"title":"LuckyBaskhar","poster":"LuckyBaskharposter.jpg"},
-        {"title":"Devara","poster":"devara_poster.jpeg"},
-        {"title":"Saripodhaa Sanivaaram","poster":"saripodhaa_sanivaaram.jpg"}
+        {"title":"HIT 3","id":"1060046","poster":"hit3_poster.jpeg"},
+        {"title":"Pushpa 2","id":"857598","poster":"Pushpa2poster.png"},
+        {"title":"Salaar","id":"770906","poster":"salaarposter.jpg"},
+        {"title":"Kalki","id":"801688","poster":"kalkiposter.jpg"},
+        {"title":"LuckyBaskhar","id":"1239511","poster":"LuckyBaskharposter.jpg"},
+        {"title":"Devara","id":"811941","poster":"devara_poster.jpeg"},
+        {"title":"Saripodhaa Sanivaaram","id":"1194915","poster":"saripodhaa_sanivaaram.jpg"}
     ]
 }
