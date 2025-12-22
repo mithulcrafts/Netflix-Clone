@@ -53,6 +53,23 @@ button:hover{
 .moviescontainer h2{
     margin-left: 70px;
 }
+#viewAllButton{
+    text-decoration: none;
+    font-size: 1.4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    position: absolute;
+    padding:1vh;
+    top: -1vh;
+    right:2vw;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.819);
+}
+#viewAllButton:hover{
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+    padding:1vh;
+}
 .row{
     margin:20px;
     margin-left: 60px;
@@ -101,3 +118,4 @@ button:hover{
 .right{
     right:2.5vw;
 }
+
