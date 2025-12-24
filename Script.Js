@@ -51,6 +51,15 @@ async function loadFromApi(endpoint,rowid,language=null,sort_by=null,genre=null,
     catch(err){
         console.error("Error loading API data:",err);
     }
+    const viewMore=document.getElementById("viewAllButton");
+    viewMore.addEventListener('mousedown',()=>{
+        let url=`./SeeMore/SeeMore.html`;
+        url+=`?endpoint=${encodeURIComponent(endpoint)}`;
+        if(language)url+=`&language=${language}`;
+        if(sort_by)url+=`&sort_by=${sort_by}`;
+        if(genre)url+=`&genre=${genre}`;
+        viewMore.href=url;
+    });
 }
 
 document.querySelectorAll(".moviescontainer").forEach(container=>{
