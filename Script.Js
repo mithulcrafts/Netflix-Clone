@@ -45,10 +45,9 @@ async function loadFromApi(
   if (sort_by) tmdbURL += `&sort_by=${sort_by}`;
   tmdbURL += `&primary_release_date.lte=${today}&with_watch_providers=8&watch_region=IN`;
   if (genre) tmdbURL += `&with_genres=${genre}`;
-  let url = `https://corsproxy.io/raw?url=${encodeURIComponent(tmdbURL)}`;
   try {
     const number = numberofmovies;
-    const res = await fetch(url);
+    const res = await fetch(tmdbURL);
     const data = await res.json();
     const movies = data.results.slice(0, number);
     console.log(`Successfully fetched ${rowid} data`);

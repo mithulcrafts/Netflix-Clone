@@ -3,6 +3,10 @@ body{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
+header{
+    display: flex;
+    justify-content: space-between;
+}
 .title{
     margin-left: 0;
     margin-top: 2vw;
@@ -52,6 +56,41 @@ button:hover{
 }
 .moviescontainer h2{
     margin-left: 70px;
+}
+.searchbar{
+    width: 30vw;
+    height:6vh;
+    margin-top: 2vw;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:3px solid transparent;
+    margin-left: auto;
+    margin-right: 5vw;
+}
+.searchbar:focus-within{
+    border:3px solid rgb(59, 59, 59);
+}
+.searchbar:hover{
+    border:3px solid rgb(59, 59, 59);
+}
+#searchinput{
+    background-color: transparent;
+    border: transparent;
+    width: 75%;
+    height: 90%;
+    color:rgba(255, 255, 255, 0.819);
+    font-size:1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#searchinput:focus{
+    background-color: transparent;
+    outline: none;
+    border:none;
+}
+#searchicon{
+    margin-left: 3vw;
 }
 .viewAllButton{
     text-decoration: none;
